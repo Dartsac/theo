@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown to Meeting Theo!</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #fdefc4;
+        margin: 100px;
+        color: #333;
+      }
+
+      #countdown {
+        font-size: 40px;
+        color: #ff6b6b;
+        margin: 20px;
+      }
+
+      img {
+        width: 300px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        color: #4ecdc4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Countdown to Meeting Theo!</h1>
+    <img src="theo.jpeg" alt="Picture of Theo" />
+    <div id="countdown"></div>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date('Aug 26, 2023 12:00:00').getTime()
+
+      // Update the countdown every 1 second
+      var countdownFunction = setInterval(function () {
+        var now = new Date().getTime()
+        var distance = countDownDate - now
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24))
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        )
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+        document.getElementById('countdown').innerHTML =
+          days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's '
+
+        if (distance < 0) {
+          clearInterval(countdownFunction)
+          document.getElementById('countdown').innerHTML = 'TIME TO MEET THEO!'
+        }
+      }, 1000)
+    </script>
+  </body>
+</html>
