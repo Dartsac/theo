@@ -13,6 +13,11 @@
         color: #333;
       }
 
+      .image-container {
+        text-align: center;
+        margin: 10px auto;
+      }
+
       #countdown {
         font-size: 40px;
         color: #ff6b6b;
@@ -24,9 +29,8 @@
         /* Set a specific width */
         height: auto;
         border-radius: 10px;
-        margin: 10px auto;
         /* Center the image */
-        display: block;
+        display: inline-block;
       }
 
       h1 {
@@ -53,7 +57,9 @@
 
   <body>
     <h1>Countdown to Getting Theo!</h1>
-    <img src="theo.jpeg" alt="Picture of Theo" />
+    <div class="image-container">
+      <img src="theo.jpeg" alt="Picture of Theo" />
+    </div>
     <div id="countdown"></div>
 
     <script>
