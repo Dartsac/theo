@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countdown to Getting Theo!</title>
     <style>
@@ -10,7 +9,7 @@
         font-family: Arial, sans-serif;
         text-align: center;
         background-color: #fdefc4;
-        margin: 100px;
+        margin: 20px;
         color: #333;
       }
 
@@ -21,12 +20,33 @@
       }
 
       img {
-        width: 300px;
+        max-width: 200px;
+        /* Set a specific width */
+        height: auto;
         border-radius: 10px;
+        margin: 10px auto;
+        /* Center the image */
+        display: block;
       }
 
       h1 {
         color: #4ecdc4;
+        font-size: 24px;
+      }
+
+      @media (min-width: 768px) {
+        img {
+          max-width: 300px;
+          /* Larger size for wider screens */
+        }
+
+        body {
+          margin: 100px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
       }
     </style>
   </head>
@@ -37,13 +57,10 @@
     <div id="countdown"></div>
 
     <script>
-      var countDownDate = new Date('Aug 26, 2023 12:00:00').getTime()
-
-      // Update the countdown every 1 second
+      var countDownDate = new Date('Aug 26, 2023 00:00:00').getTime()
       var countdownFunction = setInterval(function () {
         var now = new Date().getTime()
         var distance = countDownDate - now
-
         var days = Math.floor(distance / (1000 * 60 * 60 * 24))
         var hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
